@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/microservice-graphql-kafka/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/microservice-graphql-kafka/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/microservice-graphql-kafka",
+  "projects": {
+    "microservice-graphql-kafka": {
+      "type": "application",
+      "root": "apps/microservice-graphql-kafka",
+      "entryFile": "main",
+      "sourceRoot": "apps/microservice-graphql-kafka/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/microservice-graphql-kafka/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    }
+  }
+}
